@@ -1,9 +1,17 @@
 #!/usr/bin/env ruby
 
+# require_relative "../lib/mysql2xxxx"
+# require_relative '../lib/mysql2xxxx/cli'
+# require_relative '../lib/mysql2xxxx/writer/spark_json'
 require "mysql2xxxx"
 require 'mysql2xxxx/cli'
+require 'mysql2xxxx/writer/spark_json'
 
 cli = Mysql2xxxx::Cli.new
 cli.parse_options
 
-Mysql2xxxx::JSON.new(cli.config).to_stdout
+if cli.config[:spark]
+  Mysql2xxxx::SparkJSON.new(cli.config).to_stdout
+else
+  Mysql2xxxx::JSON.new(cli.config).to_stdout
+end

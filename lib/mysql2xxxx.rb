@@ -7,6 +7,11 @@ require 'active_support/core_ext' if ::ActiveSupport::VERSION::MAJOR >= 3
 
 require 'mysql2'
 
+# require_relative 'mysql2xxxx/config'
+# require_relative 'mysql2xxxx/writer'
+# require_relative 'mysql2xxxx/writer/json'
+# require_relative 'mysql2xxxx/writer/csv'
+# require_relative 'mysql2xxxx/writer/xml'
 require 'mysql2xxxx/config'
 require 'mysql2xxxx/writer'
 require 'mysql2xxxx/writer/json'

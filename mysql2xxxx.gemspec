@@ -23,4 +23,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'fast_xs'
   s.add_dependency 'fastercsv'
   s.add_dependency 'multi_json'
+  s.add_dependency 'oj'
 end

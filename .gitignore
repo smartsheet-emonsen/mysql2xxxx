@@ -4,3 +4,4 @@ Gemfile.lock
 pkg/*
 rdoc/*
 .DS_Store
+.idea/

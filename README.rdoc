@@ -3,8 +3,12 @@
 ==Binaries
 
     mysql2csv --user=dbuser --password=dbpassword --database=dbname --execute="select * from automobile_makes"
-    mysql2json --user=dbuser --password=dbpassword --database=dbname --execute="select * from automobile_makes"
+    mysql2json [--spark] --user=dbuser --password=dbpassword --database=dbname --execute="select * from automobile_makes"
     mysql2xml --user=dbuser --password=dbpassword --database=dbname --execute="select * from automobile_makes"
+
+Alternately, --execute-file may be used instead of --execute to specify a SQL file to execute.
+
+When using --spark, the output will be one JSON object per line. This is the format expected by Spark and other distributed processing systems like Hadoop.
 
 To see all options
 

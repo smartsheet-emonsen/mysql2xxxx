@@ -9,10 +9,19 @@ module Mysql2xxxx
         :long  => "--#{o.downcase}=#{o.upcase}",
         :description => "Set MySQL #{o.downcase}"
     end
+    option :spark,
+       :short => '-s',
+       :long => '--spark',
+       :description => "Output is one JSON object per line, for example to input into Spark and Hadoop",
+       :required => false
     option :execute,
-      :short => '-e EXECUTE',
-      :long  => '--execute=EXECUTE',
-      :description => 'The SQL statement to execute'
+           :short => '-e EXECUTE',
+           :long  => '--execute=EXECUTE',
+           :description => 'The SQL statement to execute'
+    option :execute_file,
+           :short => '-f EXECUTE_FILE',
+           :long  => '--execute-file=EXECUTE_FILE',
+           :description => 'File containing the SQL statement to execute'
     option :help,
       :long => "--help",
       :description => "Show this message",

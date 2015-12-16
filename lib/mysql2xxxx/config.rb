@@ -30,7 +30,12 @@ module Mysql2xxxx
     end
     
     def execute
-      user_specified_options[:execute]
+      sql = user_specified_options[:execute]
+      if !sql
+        sql_file = user_specified_options[:execute_file]
+        sql = File.read(sql_file)
+      end
+      sql
     end
     
     # Whether to write \N instead of a blank string for NULL. This is helpful for mysqlimport.
@@ -39,7 +44,7 @@ module Mysql2xxxx
     def slash_n
       user_specified_options.fetch :slash_n, false
     end
-        
+
     private
     
     def active_record_connection
